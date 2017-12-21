@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+<!--Special userpage for the owner-->
+{% block body %}
+	<a href={{url_for('add_staff')}}>Click to add a staff member</a></br>
+	<h2><strong>Scheduled Events</strong></h2>
+	<ul class="events">
+	<!--Display events-->
+	{% for i in events %}
+		<li>
+			<strong>Event Title: {{i.event_title}}</strong><br />
+			Description: {{i.descript}} <br />
+			Customer: {{i.customer.username}}<br/>
+			Date: <small>{{i.date}}</small>
+			<br/>Event Staff:
+			<!--Display staff-->
+			{% for j in i.staff %}
+				<br />{{j.username}}
+			{% else %}
+				<br />There are no staff scheduled for this event
+			{% endfor %}
+		</li>
+	{% else %}
+		<li>There are no events scheculed</li>
+	{% endfor %}
+	<a href = {{url_for('logout')}}>Log out</a>
+{% endblock %}

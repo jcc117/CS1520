@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+<!--Login page for the owner and staff members-->
+{%block body%}
+	Staff and administrators log in here.
+	<br />
+	{% if error %}
+		{{error}}
+		<br />
+	{% endif %}
+	<form action="" method="post">
+		Staff Username:	<input type ="text" name="user"/>
+		<br />
+		Staff Password:	<input type="password" name="pass" />
+		<input type="submit" value="Login" class='but'/>
+	</form>
+	<a href={{url_for('login')}}>Customer Log In Page</a>
+{% endblock %}

@@ -1,0 +1,21 @@
+<html>
+	<!--Base template: including the main header and body block-->
+	<head>
+		<title>Hylia Catering</title>
+		<div class="header">
+			<h1>Hylia Catering</h1>
+			<h2>Proudly Serving the Pittsburgh Area Since 2017</h2>
+			<h3>Contact the owner at 412-555-1800</h3>
+		</div>
+		<link href={{url_for('static', filename='style.css')}} rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		{% if username %}
+			Logged in as {{username}}, <a href={{url_for("logout")}}>Logout</a>
+			<br />
+			<br />
+		{% endif %}
+		{% block body %}
+		{% endblock %}
+	</body>
+</html>

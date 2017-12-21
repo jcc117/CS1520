@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body %}
+	{% if error %}
+		{{error}}
+		<br />
+	{% endif %}
+	Enter your information below to sign up!
+	<br />
+	<form method='post' action=''>
+		Enter a username:<input type='text' name='name'/><br />
+		Enter a password:<input type='password' name='pass' /><br />
+		Reenter the password:<input type='password' name='pass2' /><br />
+		<input type='submit' value='Submit'/>
+	</form>
+{% endblock %}

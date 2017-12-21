@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block header %}
+	<script type="text/javascript" src="{{url_for('static', filename='functions.js')}}"></script>
+{% endblock %}
+{% block body %}
+	<h3>{{chat.title}}</h3>
+	<br />
+	<a href={{url_for('root_page')}}>Leave this chatroom</a>
+	<a href={{url_for('logout')}}>Log out</a><br />
+	<form name='theForm'>
+		<input type='text' id='texter' value='Say something' name='texter'/>
+		<br />
+		<input type='button' id='submit' value='Submit'/>
+	</form>
+	<div id="theTable">
+	</div>
+{% endblock %}

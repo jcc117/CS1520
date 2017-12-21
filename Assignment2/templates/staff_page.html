@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+<!--User page for staff members-->
+{% block body %}
+	<a href = {{url_for('logout')}}>Log out</a>
+	<ul class="events">
+	<!--Display events the staff has signed up for-->
+	{% for i in events %}
+		<li>
+			<strong>Event Title: {{i.event_title}}</strong><br />
+			Description: {{i.descript}} <br />
+			Customer: {{i.customer.username}}<br/>
+			Date: <small>{{i.date}}</small>
+		</li>
+	{% else %}
+		<li><strong>You have no events scheduled</strong>
+	{% endfor %}
+	</ul>
+	<br />
+	<!--Display events the staff can sign up for-->
+	Open Events
+	<br />
+	<ul class="events">
+	{% for j in sign_ups %}
+		<li>
+			Event Title: <strong>{{j.event_title}}</strong><br />
+			Description: {{j.descript}} <br />
+			Customer: {{j.customer.username}}<br/>
+			Date: <small>{{j.date}}</small>
+			<a href="{{url_for('event_sign_up', ID=j.event_id)}}">Sign Up</a>
+		</li>
+	{% else %}
+		<li><strong>There are no events that you can sign up for at the moment</strong>
+	{% endfor %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{%extends "base.html"%}
+<!--Page to sign up new staff members, only for the owner to acesss-->
+{% block body %}
+	{% if error %}
+		{{error}}
+		<br />
+	{% endif %}
+	<form action="" method="post">
+		Staff Username:	<input type ="text" name="user"/>
+		<br />
+		Staff Password:	<input type="password" name="pass" /><br />
+		Resubmit Staff Password: <input type="password" name="pass2" /><br />
+		<input type="submit" value="Submit" class ='but'/>
+	</form>
+	<a href={{url_for('logout')}}>Log out</a>
+{% endblock %}

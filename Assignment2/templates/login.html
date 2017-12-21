@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+<!--Login page template-->
+{% block body %}
+	Customers log in here.
+	<br />
+	{% if error %}
+		{{error}}
+		<br />
+	{% endif %}
+	<form action="" method="post">
+		Username:	<input type ="text" name="user"/>
+		<br />
+		Password:	<input type="password" name="pass" />
+		<input type="submit" value="Login" class='but'/>
+	</form>
+	<a href={{url_for('sign_up')}}>Click here to sign up!</a>
+	<a href={{url_for('staff_login')}}>Staff Log in</a>
+{% endblock %}

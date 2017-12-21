@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<!--Page for new customers to sign up-->
+{% block body %}
+	<h1>Sign Up As A New Customer</h1>
+	{% if error %}
+		{{error}}
+		<br />
+	{% endif %}
+	<form action="" method="post">
+		Customer Username:	<input type ="text" name="user"/>
+		<br />
+		Customer Password:	<input type="password" name="pass" />
+		<br />
+		Reenter Customer Password: <input type="password" name="pass2" />
+		<br />
+		<input type="submit" value="Submit" class='but'/>
+	</form>
+{% endblock %}

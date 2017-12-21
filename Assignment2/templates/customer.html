@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+<!--Userpage for customers-->
+{% block body %}
+	{% if error %}
+		{{error}}
+		<br />
+	{% endif %}
+	<a href = {{url_for('logout')}}>Log out</a>
+	<!--Event Form-->
+	<form method='post' action="">
+		Add an Event
+		<br />
+		Event Title:<input type="text" name="title"/>
+		<br />
+		Event Description:<input type="text" name="description"/>
+		<br />
+		<!--Change later -->
+		Event Date:<input type="date" name="date"/>
+		<br />
+		<input type="submit" name="submit" value="Submit"/>
+	</form>
+	<ul class="events">
+	{% for i in events %}
+		<li>
+			<strong>Event Title: {{i.event_title}}</strong><br />
+			Description: {{i.descript}} <br />
+			Customer: {{i.customer.username}}<br/>
+			Date: <small>{{i.date}}</small>
+			</br>
+			<a href="{{url_for('cancel_event', ID = i.event_id)}}">Cancel this event</a>
+		</li>
+	{% else %}
+		<li><strong>You have no events scheduled</strong>
+	{% endfor %}
+	</ul>
+{% endblock %}

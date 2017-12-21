@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+<!--Page displayed when a customer cancels an event-->
+{% block body %}
+	Your event was canceled
+	<br />
+	<a href={{url_for('login')}}>Go to your homepage</a>
+	<br />
+	<a href={{url_for('logout')}}>Log out</a>
+{% endblock %}

@@ -1,0 +1,87 @@
+body
+{
+	background-color: #98f91d;
+	color: white;
+	font-family: Impact;
+}
+div.header
+{
+	font-family: Impact;
+	background-color: white;
+	color: black;
+	border-bottom: 3px solid #555;
+}
+h1, h2, h3
+{
+	text-align: center;
+}
+a
+{
+	text-align: center;
+	color: white;
+}
+a:hover
+{
+	color: #333;
+}
+input[type="submit"]
+{
+	background-color: #ffffff;
+	color: #000000;
+	border-radius: 8px;
+	transition-duration: 0.4s;
+}
+input[type="submit"]:hover
+{
+	background-color: #000000;
+	color: #ffffff;
+}
+input[type=text]
+{
+	border: 3px solid black;
+	border-radius: 6px;
+}
+input[type=text]:focus
+{
+	background-color: black;
+	color: white;
+	border-radius: 6px;
+	border: 6px solid white;
+}
+input[type=password]
+{
+	border: 3px solid black;
+	border-radius: 6px;
+}
+input[type=password]:focus
+{
+	background-color: black;
+	color: white;
+	border-radius: 6px;
+	border: 6px solid white;
+}
+ul.events
+{
+	background-color: #95f120;
+	color: black;
+	margin: 0;
+	padding: 0;
+}
+ul.events li
+{
+	margin: 12px 0;
+	padding: 5px;
+	border: 1px solid blue;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	min-heigh: 48px;
+	background-color: white;
+}
+ul.events a
+{
+	color: black;
+}
+ul.events a:hover
+{
+	color: red;
+}
